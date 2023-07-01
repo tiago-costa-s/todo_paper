@@ -389,26 +389,15 @@ button i {
     }
 
     .control-input input::placeholder {
-        font-size: 1.2rem;
-        color: rgba(0, 0, 0, 0.192);
+        font-size: 1.5rem;  
     }
 
-    .control-button {
-        margin: auto;
-    }
-
-    .control-button button {
-        padding: .3rem 1.5rem;
-        font-size: 1.1rem;
-        font-weight: bold;
-        background-color: transparent;
+       .control-button button {
+        font-size: 1.6rem;
+        background-color: var(--pink-paper);
         border: 2px solid var(--pink-paper);
         color: var(--pink-paper);
-        transition: 1s;
-    }
-
-    .control-button button:hover {
+        transition: none;
         color: white;
-        background-color: var(--pink-paper);
     }
 }
