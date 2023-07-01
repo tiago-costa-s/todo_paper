@@ -13,9 +13,7 @@
 :root {
     --pink-paper: #e9557f;
     --pink-lower-paper: #e9dbe7;
-
     --violet-hight-paper: #723c8c;
-
     --violet-paper: #892be270;
     --violet-lower-paper: #decde7;
 }
@@ -32,7 +30,11 @@ body {
     background-image: url("../img/pexels-veeterzy-303383.jpg");
     background-position: center;
     background-repeat: no-repeat;
-    background-size: cover; 
+    background-size: cover;
+}
+
+button, select {
+    cursor: pointer;
 }
 
 /* Todo colors */
@@ -57,11 +59,11 @@ body {
 }
 
 #themes-colors li .color {
-    width: 2rem;
-    height: 2rem;
+    width: 1.5rem;
+    height: 1.5rem;
     border-radius: 50%;
     box-shadow: 1px 1px 1px;
-    border: 4px solid white;
+    border: 3px solid white;
     pointer-events: none;
 }
 
@@ -196,7 +198,6 @@ h4 {
     border: 2px solid var(--pink-paper);
     color: var(--pink-paper);
     transition: 1s;
-    cursor: pointer;
 }
 
 .control-button button:hover {
@@ -294,7 +295,6 @@ h4 {
     /* border: 1px solid red; */
 }
 
-
 .to-do-control-buttons {
     display: flex;
     gap: .8rem;
@@ -346,3 +346,11 @@ button i {
 
 /*  Papel */
 .teme-paper {}
+
+
+
+@media (max-widt: 480px) {
+    input {
+        cursor: none;
+    }
+}

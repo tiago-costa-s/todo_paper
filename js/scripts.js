@@ -1,7 +1,7 @@
-
 // Inputs
 const todoInput = document.querySelector("#to-do-input");
-const searchInput = document.querySelector("#input-search");
+const searchInput = document.querySelector("#search-input");
+const eraseBtn = document.querySelector("#erase-button");
 const editInput = document.querySelector("#input-edit");
 const todosList = document.querySelector(".to-dos-list");
 // Botões
@@ -49,7 +49,7 @@ buttonsThemes.forEach((btn) => {
     });
 });
 
-// exibe a btnção de editar os to dos.
+// exibe a opição de editar as tarefas.
 function toggleForms() {
     createTodo.classList.toggle("hide");
     toDoSearch.classList.toggle("hide");
@@ -57,21 +57,7 @@ function toggleForms() {
     todosList.classList.toggle("hide");
 };
 
-// atualizar um to do existente
-const updateTodo = (text) => {
-    const todos = document.querySelectorAll(".to-do");
-
-    todos.forEach((todo) => {
-        let todoTitle = todo.querySelector("h3");
-
-        if (todoTitle.innerText === oldInputValue) {
-            todoTitle.innerText = text;
-            console.log(todoTitle);
-        }
-    });
-};
-
-// cria o todo e salva
+// cria a tarefa e salva
 function saveTodo(text) {
     todosList.classList.remove("hide");
 
@@ -107,9 +93,34 @@ function saveTodo(text) {
     todoInput.focus();
 };
 
-// salva os dados do to do e leva para edição.
+// atualizar um tarefa existente
+const updateTodo = (text) => {
+    const todos = document.querySelectorAll(".to-do");
 
-// editar o to do criado.
+    todos.forEach((todo) => {
+        let todoTitle = todo.querySelector("h3");
+
+        if (todoTitle.innerText === oldInputValue) {
+            todoTitle.innerText = text;
+        }
+    });
+};
+
+
+const getSearchTodos = (search) => {
+    const todos = document.querySelectorAll(".to-do");
+
+    todos.forEach((todo) => {
+        let todoTitle = todo.querySelector("h3").innerText.toLowerCase();
+
+        const normalizedSearch = search.toLowerCase();
+        todo.style.display = "flex";
+        if (!todoTitle.includes(normalizedSearch)) {
+            todo.style.display = "none";
+            console.log(todoTitle);
+        }
+    });
+};
 
 // Eventos
 // salva o valor do input dentro do h3
@@ -157,7 +168,7 @@ document.addEventListener("click", (e) => {
     }
 });
 
-
+// salva a edição da tarefa
 saveEdit.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -175,4 +186,22 @@ returnEdit.addEventListener("click", (e) => {
     e.preventDefault();
 
     toggleForms();
+});
+
+//busca uma tarefa
+searchInput.addEventListener("keyup", (e) => {
+    const search = e.target.value;
+
+    getSearchTodos(search);
+
+    console.log(search)
+});
+
+
+eraseBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    searchInput.value = "";
+
+    searchInput.dispatchEvent(new Event("keyup"));
 });
