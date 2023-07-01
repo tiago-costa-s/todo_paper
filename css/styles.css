@@ -42,7 +42,7 @@ button, select {
     margin: 1rem auto;
     width: 100%;
     max-width: 150px;
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 #themes-colors ul {
@@ -94,7 +94,7 @@ button, select {
     border-radius: 40px;
     box-shadow: 15px 20px rgba(0, 0, 0, 0.349);
 
-    border: 1px solid red;
+    /* border: 1px solid red; */
 }
 
 .to-do-header {
@@ -223,7 +223,7 @@ h4 {
     justify-content: space-between;
     gap: .5rem;
     width: 100%;
-    padding: 0;
+    padding: .2rem;
 }
 
 .control-search .control-input {
@@ -351,37 +351,64 @@ button i {
 /*  Papel */
 .teme-paper {}
 
-
-
 @media (max-width: 480px) {
     input {
         cursor: none;
     }
 
-    .to-do-container {
-        margin: .5rem auto;
-        /* width: 100%; */
-        max-width: 400px;
-        min-height: 300px;
-        background-color: var(--pink-lower-paper);
-        border-radius: 40px;
-        box-shadow: 0px 0px rgba(0, 0, 0, 0.349);
+    h2 {
+        margin-bottom: 1.5rem;
+    }
 
-        border: 1px solid red;
+    h2, h4 {
+        font-size: 1.7rem;
     }
 
     #to-do-content {
         padding: 2rem 1rem;
     }
 
+    .to-do-options {
+        padding: 1rem;
+    }
+
+    .control-input {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        margin-bottom: 1rem;
+    }
+
+    .control-input label {
+        font-size: 1.2rem;
+
+    }
+
+    .control-input input {
+        font-size: 1.5rem;
+    }
+
+    .control-input input::placeholder {
+        font-size: 1.2rem;
+        color: rgba(0, 0, 0, 0.192);
+    }
+
+    .control-button {
+        margin: auto;
+    }
+
     .control-button button {
         padding: .3rem 1.5rem;
         font-size: 1.1rem;
         font-weight: bold;
-        background-color: var(--pink-paper);
+        background-color: transparent;
         border: 2px solid var(--pink-paper);
-        color: white;
+        color: var(--pink-paper);
         transition: 1s;
     }
 
+    .control-button button:hover {
+        color: white;
+        background-color: var(--pink-paper);
+    }
 }
