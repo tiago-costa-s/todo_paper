@@ -20,6 +20,16 @@ const editTodo = document.querySelector(".edit-to-do");
 let oldInputValue;
 
 // Funções
+
+// desabilita o autocomplete dos inputs
+function desableAutocomplete() {
+    todoInput.setAttribute("autocomplete", "off");
+    searchInput.setAttribute("autocomplete", "off");
+    editInput.setAttribute("autocomplete", "off");
+};
+
+desableAutocomplete();
+
 // altera a cor do todo paper
 buttonsThemes.forEach((btn) => {
     btn.addEventListener("click", (e) => {
