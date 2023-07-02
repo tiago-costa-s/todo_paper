@@ -58,7 +58,7 @@ function toggleForms() {
 };
 
 // cria a tarefa e salva
-function saveTodo(text) {
+const saveTodo = (text, done = 0, save = 1) => {
     todosList.classList.remove("hide");
 
     const todo = document.createElement("div");
@@ -88,8 +88,16 @@ function saveTodo(text) {
     deleteBtn.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
     todoControlButtons.appendChild(deleteBtn);
 
-    todoInput.value = "";
+    // utilizando dados da localStorage
+    if (done) {
+        todo.classList.add("done");
+    }
 
+    if (save) {
+        saveTodoLocalStorage({ text, done: 0 });
+    }
+
+    todoInput.value = "";
     todoInput.focus();
 };
 
@@ -158,13 +166,14 @@ document.addEventListener("click", (e) => {
     }
 
     if (targetEl.classList.contains("btn-delete")) {
-        console.log("Evento delete");
         parentEl.remove();
 
         let todo = document.querySelector(".to-do")
         if (!todo) {
             todosList.classList.toggle("hide")
         }
+
+        removeTodoLocalStorage(todoTitle);
     }
 });
 
@@ -205,3 +214,49 @@ eraseBtn.addEventListener("click", (e) => {
 
     searchInput.dispatchEvent(new Event("keyup"));
 });
+
+// Local Storage
+
+// pega todos os to dos da local storage
+const getTodosLocalStorage = () => {
+    const todos = JSON.parse(localStorage.getItem("to-do")) || [];
+
+    return todos;
+};
+
+// pegar os to dos da localstorage
+const loadTodos = () => {
+    const todos = getTodosLocalStorage();
+
+    todos.forEach((todo) => {
+        saveTodo(todo.text, todo.done, 0);
+    });
+};
+
+// salvar todos
+const saveTodoLocalStorage = (todo) => {
+    const todos = getTodosLocalStorage();
+
+    todos.push(todo);
+
+    localStorage.setItem("to-do", JSON.stringify(todos));
+};
+
+// remove o to do da local storage
+const removeTodoLocalStorage = (todoText) => {
+
+    const todos = getTodosLocalStorage();
+
+    const filteredTodos = todos.filter((todo) => todo.text !== todoText);
+
+    localStorage.setItem("to-do", JSON.stringify(filteredTodos));
+};
+
+
+loadTodos();
+
+
+
+// add o novo todo no array
+
+// salvar tudo na local storage
