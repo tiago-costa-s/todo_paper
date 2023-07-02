@@ -98,7 +98,7 @@ input::placeholder {
 .to-do-container {
     margin: .5rem auto;
     width: 100%;
-    max-width: 400px;
+    max-width: 420px;
     min-height: 300px;
     background-color: var(--pink-lower-paper);
     border-radius: 40px;
@@ -129,7 +129,7 @@ h1 {
 }
 
 h2 {
-    margin-bottom: .5rem;
+    margin-bottom: 1rem;
 }
 
 h2, h4 {
@@ -142,6 +142,7 @@ h3 {
     width: 100%;
     font-size: 1.3rem;
     color: #4169E1;
+    margin-right: 8px;
 }
 
 h4 {
@@ -160,7 +161,7 @@ h4 {
 }
 
 .to-do-options {
-    padding: .5rem 1rem;
+    padding: 1.2rem 1rem;
     margin: 0rem 0 1.5rem;
     border: 1px solid var(--pink-paper);
     border-radius: 10px;
@@ -293,8 +294,8 @@ h4 {
 
 .to-do {
     display: flex;
-    padding: 1.2rem 1.5rem;
-    margin-bottom: .8rem;
+    padding: 1.3rem 1rem;
+    margin-bottom: 1rem;
     /* border: 1px solid black; */
     background-color: #fdf21c77;
     /* box-shadow: 3px 3px 3px #c0b81977; */
@@ -380,7 +381,6 @@ button i {
 
     .to-do-container {
         width: calc(100% - .5rem);
-
     }
 
     #to-do-content {
@@ -419,7 +419,6 @@ button i {
     }
 
     .to-do {
-        display: flex;
         padding: 1.5rem 1em;
     }
 

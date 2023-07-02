@@ -110,6 +110,8 @@ const updateTodo = (text) => {
 
         if (todoTitle.innerText === oldInputValue) {
             todoTitle.innerText = text;
+
+            updateTodoLocalStorage(oldInputValue, text);
         }
     });
 };
@@ -207,7 +209,7 @@ searchInput.addEventListener("keyup", (e) => {
     console.log(search)
 });
 
-
+// limpa o input de busca
 eraseBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
@@ -215,6 +217,9 @@ eraseBtn.addEventListener("click", (e) => {
 
     searchInput.dispatchEvent(new Event("keyup"));
 });
+
+// filtro de tarefas
+
 
 // Local Storage
 
@@ -245,7 +250,6 @@ const saveTodoLocalStorage = (todo) => {
 
 // remove o to do da local storage
 const removeTodoLocalStorage = (todoText) => {
-
     const todos = getTodosLocalStorage();
 
     const filteredTodos = todos.filter((todo) => todo.text !== todoText);
@@ -253,12 +257,23 @@ const removeTodoLocalStorage = (todoText) => {
     localStorage.setItem("to-do", JSON.stringify(filteredTodos));
 };
 
-//atualiza os todos na localstorage
+//atualiza o status to do na localstorage
 const updateTodoStatusLocalStorage = (todoText) => {
     const todos = getTodosLocalStorage();
 
     todos.map((todo) =>
         todo.text === todoText ? (todo.done = !todo.done) : null
+    );
+
+    localStorage.setItem("to-do", JSON.stringify(todos));
+}
+
+
+const updateTodoLocalStorage = (todoOldText, todoNewText) => {
+    const todos = getTodosLocalStorage();
+
+    todos.map((todo) =>
+        todo.text === todoOldText ? (todo.text = todoNewText) : null
     );
 
     localStorage.setItem("to-do", JSON.stringify(todos));
