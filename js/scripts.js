@@ -155,6 +155,7 @@ document.addEventListener("click", (e) => {
 
     if (targetEl.classList.contains("btn-finish")) {
         parentEl.classList.toggle("done");
+        updateTodoStatusLocalStorage(todoTitle);
         console.log("Evento finish");
     }
 
@@ -252,10 +253,18 @@ const removeTodoLocalStorage = (todoText) => {
     localStorage.setItem("to-do", JSON.stringify(filteredTodos));
 };
 
+//atualiza os todos na localstorage
+const updateTodoStatusLocalStorage = (todoText) => {
+    const todos = getTodosLocalStorage();
+
+    todos.map((todo) =>
+        todo.text === todoText ? (todo.done = !todo.done) : null
+    );
+
+    localStorage.setItem("to-do", JSON.stringify(todos));
+}
 
 loadTodos();
-
-
 
 // add o novo todo no array
 
