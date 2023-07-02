@@ -33,6 +33,11 @@ body {
     background-size: cover;
 }
 
+button {
+    font-size: 1.2rem;
+}
+
+
 button, select {
     cursor: pointer;
 }
@@ -195,13 +200,17 @@ h4 {
 }
 
 .control-button button {
-    padding: .5rem 1.5rem;
-    font-size: 1.1rem;
+    min-width: 90px;
+    padding: .2rem 0rem;
     font-weight: bold;
     background-color: transparent;
     border: 2px solid var(--pink-paper);
     color: var(--pink-paper);
     transition: 1s;
+}
+
+.control-button button:first-child {
+    margin-right: .5rem;
 }
 
 .control-button button:hover {
@@ -305,7 +314,7 @@ h4 {
 }
 
 .to-do-control-buttons button {
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: #000000;
     opacity: .3;
     border: 0;
@@ -361,7 +370,7 @@ button i {
     }
 
     h2, h4 {
-        font-size: 1.7rem;
+        font-size: 1.6rem;
     }
 
     h3 {
@@ -370,7 +379,7 @@ button i {
 
     .to-do-container {
         width: calc(100% - .5rem);
-       
+
     }
 
     #to-do-content {
@@ -411,5 +420,9 @@ button i {
     .to-do {
         display: flex;
         padding: 1.5rem 1em;
+    }
+
+    .to-do-control-buttons button {
+        font-size: 1.2rem;
     }
 }
