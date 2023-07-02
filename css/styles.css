@@ -368,6 +368,11 @@ button i {
         font-size: 1.5rem;
     }
 
+    .to-do-container {
+        width: calc(100% - .5rem);
+       
+    }
+
     #to-do-content {
         padding: 2rem 1rem;
     }
