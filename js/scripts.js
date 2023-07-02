@@ -7,6 +7,7 @@ const todosList = document.querySelector(".to-dos-list");
 // Botões
 const buttonsThemes = document.querySelectorAll("#themes-colors li");
 const createTodo = document.querySelector(".create-to-do");
+const filterBtn = document.querySelector("#filter-btn");
 const saveEdit = document.querySelector("#save-edit");
 const returnEdit = document.querySelector("#return-edit");
 // Elementos
@@ -116,7 +117,6 @@ const updateTodo = (text) => {
     });
 };
 
-
 const getSearchTodos = (search) => {
     const todos = document.querySelectorAll(".to-do");
 
@@ -132,7 +132,37 @@ const getSearchTodos = (search) => {
     });
 };
 
+const filterTodos = (filterValue) => {
+    const todos = document.querySelectorAll(".to-do");
+
+    switch (filterValue) {
+        case "all":
+            todos.forEach((todo) => todo.style.display = "flex");
+            break;
+
+        case "done":
+            todos.forEach((todo) =>
+                todo.classList.contains("done")
+                    ? (todo.style.display = "flex")
+                    : (todo.style.display = "none")
+            );
+            break;
+
+        case "todo":
+            todos.forEach((todo) =>
+                !todo.classList.contains("done")
+                    ? (todo.style.display = "flex")
+                    : (todo.style.display = "none")
+            );
+            break;
+
+        default:
+            break;
+    }
+};
+
 // Eventos
+
 // salva o valor do input dentro do h3
 createTodo.addEventListener("submit", (e) => {
     e.preventDefault();
@@ -218,8 +248,14 @@ eraseBtn.addEventListener("click", (e) => {
     searchInput.dispatchEvent(new Event("keyup"));
 });
 
-// filtro de tarefas
+// aciona o filtro de tarefas
+filterBtn.addEventListener("change", (e) => {
+    const filterValue = e.target.value;
 
+    console.log(filterValue);
+
+    filterTodos(filterValue);
+});
 
 // Local Storage
 
