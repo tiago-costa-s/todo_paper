@@ -50,21 +50,12 @@ buttonsThemes.forEach((btn) => {
     });
 });
 
-// exibe a opição de editar as tarefas.
-function toggleForms() {
-    createTodo.classList.toggle("hide");
-    toDoSearch.classList.toggle("hide");
-    editTodo.classList.toggle("hide");
-    todosList.classList.toggle("hide");
-};
-
 // cria a tarefa e salva
 const saveTodo = (text, done = 0, save = 1) => {
     todosList.classList.remove("hide");
 
     const todo = document.createElement("div");
     todo.classList.add("to-do");
-    todosList.appendChild(todo);
 
     const h3 = document.createElement("h3");
     h3.innerHTML = text;
@@ -98,8 +89,19 @@ const saveTodo = (text, done = 0, save = 1) => {
         saveTodoLocalStorage({ text, done: 0 });
     }
 
+    todosList.appendChild(todo);
+
     todoInput.value = "";
+
     todoInput.focus();
+};
+
+// exibe e oculta as opições de criação busca e edição.
+function toggleForms() {
+    createTodo.classList.toggle("hide");
+    toDoSearch.classList.toggle("hide");
+    editTodo.classList.toggle("hide");
+    todosList.classList.toggle("hide");
 };
 
 // atualizar um tarefa existente
@@ -302,7 +304,7 @@ const updateTodoStatusLocalStorage = (todoText) => {
     );
 
     localStorage.setItem("to-do", JSON.stringify(todos));
-}
+};
 
 
 const updateTodoLocalStorage = (todoOldText, todoNewText) => {
@@ -313,10 +315,6 @@ const updateTodoLocalStorage = (todoOldText, todoNewText) => {
     );
 
     localStorage.setItem("to-do", JSON.stringify(todos));
-}
+};
 
 loadTodos();
-
-// add o novo todo no array
-
-// salvar tudo na local storage
