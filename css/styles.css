@@ -411,7 +411,7 @@ button i {
     }
 
     .control-button button {
-        font-size: 1.6rem;
+      
         background-color: var(--pink-paper);
         color: white;
         transition: none;
