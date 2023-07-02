@@ -37,6 +37,11 @@ button, select {
     cursor: pointer;
 }
 
+input::placeholder {
+    font-size: 1.2rem;
+    color: rgba(0, 0, 0, 0.192);
+}
+
 /* Todo colors */
 #themes-colors {
     margin: 1rem auto;
@@ -185,17 +190,12 @@ h4 {
     /* color: #ff0000; */
 }
 
-.control-input input::placeholder {
-    font-size: 1.2rem;
-    color: rgba(0, 0, 0, 0.192);
-}
-
 .control-button {
     margin: auto;
 }
 
 .control-button button {
-    padding: .3rem 1.5rem;
+    padding: .5rem 1.5rem;
     font-size: 1.1rem;
     font-weight: bold;
     background-color: transparent;
@@ -257,7 +257,7 @@ h4 {
     background-color: transparent;
     border: 2px solid var(--pink-paper);
     outline: 0;
-    font-size: 1rem;
+    font-size: 1.2rem;
     font-weight: 400;
     color: var(--pink-paper);
 }
@@ -283,8 +283,8 @@ h4 {
 
 .to-do {
     display: flex;
-    margin-bottom: 1rem;
-    padding: 1rem .5rem 1rem 2rem;
+    padding: 1.2rem 1.5rem;
+    margin-bottom: .8rem;
     /* border: 1px solid black; */
     background-color: #fdf21c77;
     /* box-shadow: 3px 3px 3px #c0b81977; */
@@ -364,6 +364,10 @@ button i {
         font-size: 1.7rem;
     }
 
+    h3 {
+        font-size: 1.5rem;
+    }
+
     #to-do-content {
         padding: 2rem 1rem;
     }
@@ -389,15 +393,18 @@ button i {
     }
 
     .control-input input::placeholder {
-        font-size: 1.5rem;  
+        font-size: 1.5rem;
     }
 
-       .control-button button {
+    .control-button button {
         font-size: 1.6rem;
         background-color: var(--pink-paper);
-        border: 2px solid var(--pink-paper);
-        color: var(--pink-paper);
-        transition: none;
         color: white;
+        transition: none;
+    }
+
+    .to-do {
+        display: flex;
+        padding: 1.5rem 1em;
     }
 }
