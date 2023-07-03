@@ -3,7 +3,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Caveat', cursive;
-
     /* font-family: 'Satisfy', cursive; */
     /* font-family: 'Raleway', sans-serif; */
     /* font-family: 'Lobster', cursive; */
@@ -47,12 +46,12 @@ input::placeholder {
     color: rgba(0, 0, 0, 0.192);
 }
 
+
 /* Todo colors */
 #themes-colors {
     margin: 1rem auto;
     width: 100%;
     max-width: 150px;
-    /* border: 1px solid red; */
 }
 
 #themes-colors ul {
@@ -62,7 +61,6 @@ input::placeholder {
 }
 
 #themes-colors li {
-    /* margin: 1rem; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -103,8 +101,6 @@ input::placeholder {
     background-color: var(--pink-lower-paper);
     border-radius: 40px;
     box-shadow: 15px 20px rgba(0, 0, 0, 0.349);
-
-    /* border: 1px solid red; */
 }
 
 .to-do-header {
@@ -207,7 +203,7 @@ h4 {
     background-color: transparent;
     border: 2px solid var(--pink-paper);
     color: var(--pink-paper);
-    transition: 1s;
+    transition: .500s;
 }
 
 .control-button button:first-child {
@@ -217,12 +213,12 @@ h4 {
 .control-button button:hover {
     color: white;
     background-color: var(--pink-paper);
+    opacity: 1;
 }
 
 /* Buscar */
 .to-do-search {
     padding: .5rem 1rem;
-    /* margin-bottom: 2rem; */
     border: 1px solid var(--pink-paper);
     border-radius: 10px;
 }
@@ -249,13 +245,17 @@ h4 {
 
 .control-search .control-input button {
     background-color: transparent;
-    border: 0;
     flex: 2;
+    padding: 0 5px;
+    border: 2px solid var(--pink-paper);
+    margin-left: 7px;
+    transition: .5s;
+    color: var(--pink-paper);
 }
 
-.control-search .control-input i {
-    color: var(--pink-paper);
-    font-size: 1.2rem;
+.control-search .control-input button:hover {
+    color: white;
+    background-color: var(--pink-paper);
 }
 
 /* Select */
@@ -270,7 +270,14 @@ h4 {
     font-size: 1.2rem;
     font-weight: 400;
     color: var(--pink-paper);
+    transition: .500s;
 }
+
+.control-select select:hover {
+    color: white;
+    background-color: var(--pink-paper);
+}
+
 
 /* Lista de to do */
 .to-dos-list {
@@ -324,9 +331,9 @@ h4 {
     transition: .5s;
 }
 
-.to-do-control-buttons button:hover {
+/* .to-do-control-buttons button:hover {
     opacity: 1;
-}
+} */
 
 button i {
     pointer-events: none;

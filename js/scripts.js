@@ -60,6 +60,7 @@ buttonsThemes.forEach((btn) => {
     });
 });
 
+
 // cria a tarefa e salva
 const saveTodo = (text, done = 0, save = 1) => {
     todosList.classList.remove("hide");
@@ -87,7 +88,7 @@ const saveTodo = (text, done = 0, save = 1) => {
 
     const deleteBtn = document.createElement("button");
     deleteBtn.classList.add("btn-delete");
-    deleteBtn.innerHTML = `<i class="fa-solid fa-xmark"></i>`;
+    deleteBtn.innerHTML = `<i class="fa-solid fa-trash"></i>`;
     todoControlButtons.appendChild(deleteBtn);
 
     // utilizando dados da localStorage
@@ -106,7 +107,7 @@ const saveTodo = (text, done = 0, save = 1) => {
     todoInput.focus();
 };
 
-// exibe e oculta as opições de criação busca e edição.
+// exibe e oculta as opições de criação, busca e edição.
 function toggleForms() {
     createTodo.classList.toggle("hide");
     toDoSearch.classList.toggle("hide");
@@ -114,7 +115,7 @@ function toggleForms() {
     todosList.classList.toggle("hide");
 };
 
-// atualizar um tarefa existente
+// atualiza um tarefa existente
 const updateTodo = (text) => {
     const todos = document.querySelectorAll(".to-do");
 
@@ -199,8 +200,8 @@ document.addEventListener("click", (e) => {
 
     if (targetEl.classList.contains("btn-finish")) {
         parentEl.classList.toggle("done");
+
         updateTodoStatusLocalStorage(todoTitle);
-        console.log("Evento finish");
     }
 
     if (targetEl.classList.contains("btn-edit")) {
@@ -247,8 +248,6 @@ searchInput.addEventListener("keyup", (e) => {
     const search = e.target.value;
 
     getSearchTodos(search);
-
-    console.log(search)
 });
 
 // limpa o input de busca
@@ -263,8 +262,6 @@ eraseBtn.addEventListener("click", (e) => {
 // aciona o filtro de tarefas
 filterBtn.addEventListener("change", (e) => {
     const filterValue = e.target.value;
-
-    console.log(filterValue);
 
     filterTodos(filterValue);
 });
