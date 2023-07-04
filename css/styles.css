@@ -2,11 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Caveat', cursive;
-    /* font-family: 'Satisfy', cursive; */
-    /* font-family: 'Raleway', sans-serif; */
-    /* font-family: 'Lobster', cursive; */
-    /* font-family: 'Dancing Script', cursive; */
+    font-family: 'Caveat', cursive;  
 }
 
 :root {
@@ -26,7 +22,7 @@ ul {
 }
 
 body {
-    background-image: url("../img/pexels-veeterzy-303383.jpg");
+    background-image: url("../img/1.jpg");
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -46,9 +42,9 @@ input::placeholder {
     color: rgba(0, 0, 0, 0.192);
 }
 
-
 /* Todo colors */
 #themes-colors {
+    visibility: hidden;
     margin: 1rem auto;
     width: 100%;
     max-width: 150px;
@@ -108,12 +104,9 @@ input::placeholder {
     background-color: var(--pink-paper);
     border-top-left-radius: 40px;
     border-top-right-radius: 40px;
-    font-family: 'Bebas Neue', sans-serif;
+    /* font-family: 'Bebas Neue', sans-serif;
     font-family: 'Caveat', cursive;
-    font-family: 'Satisfy', cursive;
-    /* font-family: 'Raleway', sans-serif; */
-    /* font-family: 'Lobster', cursive; */
-    /* font-family: 'Dancing Script', cursive; */
+    font-family: 'Satisfy', cursive; */
     color: white;
     text-align: center;
     font-style: italic;
@@ -148,12 +141,6 @@ h4 {
 
 #to-do-content {
     padding: 2rem 2rem;
-}
-
-#to-do-controls {
-    /* margin-bottom: 2rem; */
-
-    /* border: 2px solid rgb(255, 238, 0);     */
 }
 
 .to-do-options {
@@ -278,7 +265,6 @@ h4 {
     background-color: var(--pink-paper);
 }
 
-
 /* Lista de to do */
 .to-dos-list {
     padding: 1rem 0;
@@ -331,10 +317,6 @@ h4 {
     transition: .5s;
 }
 
-/* .to-do-control-buttons button:hover {
-    opacity: 1;
-} */
-
 button i {
     pointer-events: none;
 }
@@ -367,8 +349,6 @@ button i {
 }
 
 /*  Papel */
-.teme-paper {}
-
 @media (max-width: 480px) {
     input {
         cursor: none;

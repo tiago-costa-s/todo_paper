@@ -31,34 +31,34 @@ function desableAutocomplete() {
 desableAutocomplete();
 
 // altera a cor do todo paper
-buttonsThemes.forEach((btn) => {
-    btn.addEventListener("click", (e) => {
+// buttonsThemes.forEach((btn) => {
+//     btn.addEventListener("click", (e) => {
 
-        buttonsThemes.forEach((btn) => {
-            btn.querySelector(".color").classList.remove("selected");
-        });
+//         buttonsThemes.forEach((btn) => {
+//             btn.querySelector(".color").classList.remove("selected");
+//         });
 
-        btn.querySelector(".color").classList.add("selected");
+//         btn.querySelector(".color").classList.add("selected");
 
-        if (btn.id === "paper") {
-            console.log("Paper")
-        }
+//         if (btn.id === "paper") {
+//             console.log("Paper")
+//         }
 
-        if (btn.id === "pink") {
-            console.log("Pink")
-        }
+//         if (btn.id === "pink") {
+//             console.log("Pink")
+//         }
 
-        if (btn.id === "violet") {
-            header.classList.add("theme-violet-background");
-            todoContainer.classList.add("theme-violet-lower-background");
-            createTodo.classList.add("theme-violet-border");
-            titleH2.classList.add("theme-violet-color");
-            toDoSearch.classList.add("theme-violet-border");
-            editTodo.classList.add("theme-violet-border");
-            console.log("Violet")
-        }
-    });
-});
+//         if (btn.id === "violet") {
+//             header.classList.add("theme-violet-background");
+//             todoContainer.classList.add("theme-violet-lower-background");
+//             createTodo.classList.add("theme-violet-border");
+//             titleH2.classList.add("theme-violet-color");
+//             toDoSearch.classList.add("theme-violet-border");
+//             editTodo.classList.add("theme-violet-border");
+//             console.log("Violet")
+//         }
+//     });
+// });
 
 
 // cria a tarefa e salva
