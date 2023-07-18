@@ -25,7 +25,7 @@ Link: https://todo-paper.vercel.app/
 ### Tecnologias
  - HTML 5;
  - CSS3;
- - Javascript Vanila;
+ - Javascript Vanila (Manipulação do Doom, Localstorage e Persistencia de dados);
 
 
 ![](https://i.postimg.cc/9MVcYBxL/todo-paper-tarefas.png)
