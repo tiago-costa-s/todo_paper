@@ -3,7 +3,7 @@
 Link: https://todo-paper.vercel.app/
 
 
-### Funcionalidade
+## Funcionalidade
  - Criar tarefas;
  - Concluir tarefas;
  - Editar tarefas;
