@@ -10,7 +10,7 @@ Link: https://todo-paper.vercel.app/
  - Remover tarefas;
  - Buscar tarefas criadas;
 
-### Proximas atualizações
+## Proximas atualizações
 
  - Salvar os dados das tarefas criadas no localstorage;
  - Atualizar os dados no localstorage quando houver a tarefa for concluida;
@@ -22,7 +22,7 @@ Link: https://todo-paper.vercel.app/
  - Salvar o tema selecionado pelo usuario no local storage;
 
 
-### Tecnologias
+## Tecnologias
  - HTML 5;
  - CSS3;
  - Javascript Vanila (Manipulação do Doom, Localstorage e Persistencia de dados);
